@@ -17,14 +17,15 @@
       text-align: center;
       padding: 20px 0;
     }
+    .logout-container {
+      text-align: center;
+      margin: 20px 0;
+    }
     .logout-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
       background-color: #dc3545;
       color: white;
       border: none;
-      padding: 10px 16px;
+      padding: 10px 20px;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
@@ -64,6 +65,7 @@
       margin: 0 10px;
       color: #007bff;
       text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -71,13 +73,16 @@
   <header>
     <h1>Jackson's Hub</h1>
     <p>Your Trusted Digital Seller</p>
-    <button class="logout-button" onclick="logout()">Logout</button>
   </header>
 
   <nav>
     <a href="home.html">Home</a>
     <a href="reviews.html">Reviews</a>
   </nav>
+
+  <div class="logout-container">
+    <button class="logout-button" onclick="logout()">Logout</button>
+  </div>
 
   <div class="product">
     <img src="chase.png" alt="Chase Screenshot">
@@ -109,4 +114,4 @@
     }
   </script>
 </body>
-               </html>
+</html>
