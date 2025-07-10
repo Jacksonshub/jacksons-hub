@@ -17,6 +17,18 @@
       text-align: center;
       padding: 20px 0;
     }
+    .logout-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .product {
       display: flex;
       flex-direction: column;
@@ -59,10 +71,11 @@
   <header>
     <h1>Jackson's Hub</h1>
     <p>Your Trusted Digital Seller</p>
+    <button class="logout-button" onclick="logout()">Logout</button>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="reviews.html">Reviews</a>
   </nav>
 
@@ -87,5 +100,13 @@
   <div style="text-align: center;">
     <a class="contact-button" href="mailto:babylon34211@gmail.com">Contact Seller</a>
   </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
-</html>
+               </html>
