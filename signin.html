@@ -54,7 +54,7 @@
       const storedEmail = localStorage.getItem("email");
       const storedPassword = localStorage.getItem("password");
       if (email === storedEmail && password === storedPassword) {
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       } else {
         document.getElementById("signinError").innerText = "Wrong details, please type correct details.";
       }
