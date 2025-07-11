@@ -47,18 +47,13 @@
   <button onclick="signIn()">Sign In</button>
   <p>New to Jacksonshub? <a href="signup.html">Sign up</a></p>
   <p id="signinError" class="error"></p>
-
   <script>
     function signIn() {
-      const email = document.getElementById("signinEmail").value.trim();
-      const password = document.getElementById("signinPassword").value.trim();
-
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-
-      const foundUser = users.find(user => user.email === email && user.password === password);
-
-      if (foundUser) {
-        localStorage.setItem("currentUser", JSON.stringify(foundUser)); // Save active user
+      const email = document.getElementById("signinEmail").value;
+      const password = document.getElementById("signinPassword").value;
+      const storedEmail = localStorage.getItem("email");
+      const storedPassword = localStorage.getItem("password");
+      if (email === storedEmail && password === storedPassword) {
         window.location.href = "home.html";
       } else {
         document.getElementById("signinError").innerText = "Wrong details, please type correct details.";
@@ -66,4 +61,4 @@
     }
   </script>
 </body>
-</html>
+</html>       
