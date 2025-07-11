@@ -70,6 +70,14 @@
   </style>
 </head>
 <body>
+  <script>
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+    if (!storedEmail || !storedPassword) {
+      window.location.href = "index.html";
+    }
+  </script>
+
   <header>
     <h1>Jackson's Hub</h1>
     <p>Your Trusted Digital Seller</p>
