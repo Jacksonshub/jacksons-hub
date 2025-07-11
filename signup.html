@@ -42,41 +42,19 @@
   <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
   <button onclick="signUp()">Sign Up</button>
   <p id="signupError" class="error"></p>
-
   <script>
     function signUp() {
-      const email = document.getElementById("signupEmail").value.trim();
-      const password = document.getElementById("signupPassword").value.trim();
-      const confirm = document.getElementById("confirmPassword").value.trim();
-      const errorElement = document.getElementById("signupError");
-
-      // Passwords must match
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+      const confirm = document.getElementById("confirmPassword").value;
       if (password !== confirm) {
-        errorElement.innerText = "Passwords do not match.";
-        return;
+        document.getElementById("signupError").innerText = "Passwords do not match.";
+      } else {
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        window.location.href = "home.html";
       }
-
-      // Get existing users
-      let users = JSON.parse(localStorage.getItem("users")) || [];
-
-      // Check if email already exists
-      const userExists = users.some(user => user.email === email);
-      if (userExists) {
-        errorElement.innerText = "Email is already registered.";
-        return;
-      }
-
-      // Add new user
-      const newUser = { email, password };
-      users.push(newUser);
-      localStorage.setItem("users", JSON.stringify(users));
-
-      // Log the user in immediately
-      localStorage.setItem("currentUser", JSON.stringify(newUser));
-
-      // Redirect to home
-      window.location.href = "home.html";
     }
   </script>
 </body>
-</html>
+</html>  
